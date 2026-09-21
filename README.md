@@ -172,7 +172,7 @@ raised 6 false alarms (false positives).
 
 ## References
 
-1. [Dataset source — paste Kaggle citation here]
+1. [Dataset source — https://www.kaggle.com/datasets/umerrtx/machine-failure-prediction-using-sensor-data]
 2. Matzka, S. (2020). *AI4I 2020 Predictive Maintenance Dataset*. UCI
    Machine Learning Repository.
    https://archive.ics.uci.edu/ml/datasets/AI4I+2020+Predictive+Maintenance+Dataset
@@ -184,7 +184,7 @@ raised 6 false alarms (false positives).
 
 **Sakshi Rana**
 - GitHub: [@Sakshi-zz](https://github.com/Sakshi-zz)
-- Email: [your email]
+- Email: []
 - LinkedIn: [your LinkedIn]
 
 ---
