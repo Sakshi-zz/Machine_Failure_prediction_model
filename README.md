@@ -21,8 +21,8 @@ machine failure **before** it occurs.
 - **Features:** footfall, tempMode, AQ, USS, CS, VOC, RP, IP, Temperature
 - **Target:** `fail` — 1 = machine failure, 0 = no failure
 - **Class balance:** ~42% failures / ~58% no failure
-- **Source:** [paste Kaggle dataset URL here]
-- **License:** [paste license, e.g., CC0 Public Domain]
+- **Source:** [umerrtx (2023). Machine Failure Prediction Using Sensor Data — Kaggle](https://www.kaggle.com/datasets/umerrtx/machine-failure-prediction-using-sensor-data)
+- **License:** Distributed under the original uploader's terms on Kaggle.
 
 ### Feature Description
 
@@ -50,6 +50,7 @@ is the standard benchmark.
 ## Method
 
 1. **Preprocessing**
+   - No missing values (verified via `isnull().sum()`)
    - Stratified 80/20 train/test split (755 train / 189 test)
    - Standard scaling of features (`StandardScaler`)
 
@@ -70,8 +71,8 @@ is the standard benchmark.
 | Model | Accuracy | Precision | Recall | F1 | ROC-AUC |
 |---|---|---|---|---|---|
 | Majority Baseline | 0.583 | 0.000 | 0.000 | 0.000 | 0.500 |
-| Logistic Regression | [fill] | [fill] | [fill] | [fill] | [fill] |
-| **Random Forest** | **0.931** | **0.923** | **0.911** | **0.917** | **0.975** |
+| Logistic Regression | 0.9365 | 0.9351 | 0.9114 | 0.9231 | 0.9780 |
+| **Random Forest** | **0.9312** | **0.9231** | **0.9114** | **0.9172** | **0.9753** |
 
 **Random Forest** was selected as the final model based on the highest F1
 and ROC-AUC. On the test set, it missed 7 failures (false negatives) and
@@ -109,16 +110,15 @@ raised 6 false alarms (false positives).
 ## Repository Structure
 
     Machine_Failure_prediction_model/
+    ├── LICENSE
+    ├── Machine_Failure_Prediction_Model.ipynb
     ├── README.md
-    ├── requirements.txt
-    ├── machine_failure_prediction.ipynb    # main notebook
-    ├── report.pdf                          # detailed project report
-    ├── presentation.pdf                    # project presentation
-    ├── roc_curve.png
     ├── confusion_matrix.png
     ├── feature_importance.png
-    └── data/
-        └── README.md                       # dataset source + license
+    ├── kaggle_sensor_data.csv
+    ├── report.pdf
+    ├── requirements.txt
+    └── roc_curve.png
 
 ---
 
@@ -126,9 +126,8 @@ raised 6 false alarms (false positives).
 
 ### In Google Colab (recommended)
 
-1. Open `machine_failure_prediction.ipynb` in Colab
-2. Download the dataset from [Kaggle link] and upload it to `/content/`
-   (see `data/README.md` for details)
+1. Open `Machine_Failure_Prediction_Model.ipynb` in Colab
+2. The notebook loads the dataset automatically from the repository
 3. Run all cells
 
 ### Locally
@@ -136,7 +135,7 @@ raised 6 false alarms (false positives).
     git clone https://github.com/Sakshi-zz/Machine_Failure_prediction_model.git
     cd Machine_Failure_prediction_model
     pip install -r requirements.txt
-    jupyter notebook machine_failure_prediction.ipynb
+    jupyter notebook Machine_Failure_Prediction_Model.ipynb
 
 ---
 
@@ -151,10 +150,9 @@ raised 6 false alarms (false positives).
 
 ---
 
-## Reports
+## Report
 
 - [Full report (PDF)](report.pdf)
-- [Presentation (PDF)](presentation.pdf)
 
 ---
 
@@ -172,11 +170,11 @@ raised 6 false alarms (false positives).
 
 ## References
 
-1. [Dataset source — https://www.kaggle.com/datasets/umerrtx/machine-failure-prediction-using-sensor-data]
+1. umerrtx. (2023). *Machine Failure Prediction Using Sensor Data*. Kaggle.
+   https://www.kaggle.com/datasets/umerrtx/machine-failure-prediction-using-sensor-data
 2. Matzka, S. (2020). *AI4I 2020 Predictive Maintenance Dataset*. UCI
    Machine Learning Repository.
    https://archive.ics.uci.edu/ml/datasets/AI4I+2020+Predictive+Maintenance+Dataset
-3. [Add 1–2 more papers on predictive maintenance if you used any]
 
 ---
 
@@ -184,11 +182,9 @@ raised 6 false alarms (false positives).
 
 **Sakshi Rana**
 - GitHub: [@Sakshi-zz](https://github.com/Sakshi-zz)
-- Email: []
-- LinkedIn: [your LinkedIn]
 
 ---
 
 ## License
 
-This project is licensed under the MIT License. See `LICENSE` for details.
+This project is licensed under the MIT License. See [LICENSE](LICENSE) for details.
